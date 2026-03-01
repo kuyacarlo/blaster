@@ -100,7 +100,7 @@ export default function App() {
     const interval = setInterval(() => {
       setCalls((prev) => {
         const updated = prev.map((call) => {
-          const statuses = ['Kumokonekta...', 'Tumutugtog ng Audio...', 'USSD Session Aktibo', 'Completado'];
+          const statuses = ['Kumokonekta...', 'Tumutugtog ng Audio...', 'USSD Session Aktibo', 'Nakumpleto na'];
           const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
           return { ...call, status: randomStatus };
         });
@@ -170,11 +170,10 @@ export default function App() {
         >
           <button
             onClick={() => setEmergencyMode(!emergencyMode)}
-            className={`px-6 py-3 rounded font-bold tracking-wide transition-all ${
-              emergencyMode
+            className={`px-6 py-3 rounded font-bold tracking-wide transition-all ${emergencyMode
                 ? 'bg-red-500 text-white border-2 border-red-300 shadow-lg shadow-red-500/50'
                 : 'bg-[#22c55e] text-[#09090b] border-2 border-[#22c55e] hover:shadow-lg hover:shadow-[#22c55e]/50'
-            }`}
+              }`}
           >
             {emergencyMode ? '⚠️ EMERGENCY MODE NAKASINDI' : '🚨 I-TRIGGER ANG EMERGENCY ADVISORY'}
           </button>
